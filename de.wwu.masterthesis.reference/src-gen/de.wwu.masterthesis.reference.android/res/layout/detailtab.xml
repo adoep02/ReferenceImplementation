@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/detailTab"
+	style="@style/ContainerDefault"
+	android:orientation="vertical">
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName10_text" />
+	
+	<EditText
+		android:id="@+id/photoTextInput"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName11_text" />
+	
+	<EditText
+		android:id="@+id/nameTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName12_text" />
+	
+	<EditText
+		android:id="@+id/firstnameTextInput"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName13_text" />
+	
+	<EditText
+		android:id="@+id/phoneTextInput"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName14_text" />
+	
+	<EditText
+		android:id="@+id/emailTextInput"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName15_text" />
+	
+	<EditText
+		android:id="@+id/streetTextInput"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName16_text" />
+	
+	<EditText
+		android:id="@+id/cityTextInput"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="@string/label__anonymousName17_text" />
+	
+	<EditText
+		android:id="@+id/zipCodeTextInput"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<Button
+		android:id="@+id/retrieveGPS"
+		style="@style/ContentDefault"
+		android:text="@string/retrieveGPS_text" />
+	
+	<TextView
+		android:id="@+id/groupLabel"
+		style="@style/ContentDefault"
+		android:text="@string/groupLabel_text" />
+	
+	<Button
+		android:id="@+id/addGroupButton"
+		style="@style/ContentDefault"
+		android:text="@string/addGroupButton_text" />
+	
+	<LinearLayout
+		android:id="@+id/persistence1"
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+		
+		<Button
+			android:id="@+id/saveButton1"
+			style="@style/ContentDefault"
+			android:text="@string/saveButton1_text" />
+		
+	</LinearLayout>
+	
+</LinearLayout>

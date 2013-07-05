@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/detailTab"
+	style="@style/ContainerDefault"
+	android:orientation="vertical">
+    
+     <LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="vertical">
+    
+    <LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Photo" />
+	
+	<EditText
+		android:id="@+id/photoTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Name" />
+	
+	<EditText
+		android:id="@+id/nameTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Firstname" />
+	
+	<EditText
+		android:id="@+id/firstnameTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Phone" />
+	
+	<EditText
+		android:id="@+id/phoneTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Email" />
+	
+	<EditText
+		android:id="@+id/emailTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Street" />
+	
+	<EditText
+		android:id="@+id/streetTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="City" />
+	
+	<EditText
+		android:id="@+id/cityTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Zip Code" />
+	
+	<EditText
+		android:id="@+id/zipCodeTextInput1"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<Button
+		android:id="@+id/retrieveGPS1"
+		style="@style/ContentDefault"
+		android:text="Retrieve GPS position" />
+	
+	<TextView
+		android:id="@+id/groupLabel1"
+		style="@style/ContentDefault"
+		android:text="Group" />
+	
+	 <ListView
+	     android:id="@+id/grouplist"
+	     android:layout_width="fill_parent"
+	     android:layout_height="201dp" />
+	
+	<Button
+		android:id="@+id/addGroupButton1"
+		style="@style/ContentDefault"
+		android:text="Add Group" />
+	
+	<LinearLayout
+		android:id="@+id/persistence1"
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+		
+		<Button
+			android:id="@+id/saveButton1"
+			style="@style/ContentDefault"
+			android:text="Save" />
+		
+	</LinearLayout>
+	
+	</LinearLayout>
+
+</ScrollView>

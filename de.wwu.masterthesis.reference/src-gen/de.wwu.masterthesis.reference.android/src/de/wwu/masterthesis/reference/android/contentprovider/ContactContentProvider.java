@@ -1,0 +1,55 @@
+package de.wwu.masterthesis.reference.android.contentprovider;
+
+import java.util.List;
+import java.util.Date;
+
+import org.codehaus.jackson.Version;
+import org.codehaus.jackson.map.module.SimpleModule;
+import org.codehaus.jackson.type.TypeReference;
+
+import android.widget.TextView;
+
+import de.wwu.md2.android.lib.MD2Application;
+import de.wwu.md2.android.lib.controller.actions.CodeFragment;
+import de.wwu.md2.android.lib.controller.actions.CustomAction;
+import de.wwu.md2.android.lib.controller.contentprovider.LocalContentProvider;
+import de.wwu.md2.android.lib.controller.contentprovider.MD2DateSerializer;
+import de.wwu.md2.android.lib.controller.contentprovider.MD2EnumDeserializer;
+import de.wwu.md2.android.lib.controller.contentprovider.MD2EnumSerializer;
+import de.wwu.masterthesis.reference.android.R;
+import de.wwu.masterthesis.reference.android.models.Contact;
+
+@SuppressWarnings("all")
+public class ContactContentProvider extends LocalContentProvider<Contact> {
+	
+	public ContactContentProvider(MD2Application app) {
+		super(app, new TypeReference<Contact.Array>() {}, Contact.class, true,
+		"contactContentProvider.json"
+		);
+		
+		SimpleModule module = new SimpleModule("MyModule", new Version(1, 0, 0, null));
+		module.addSerializer(Date.class, new MD2DateSerializer());
+		om.registerModule(module);
+		
+		final ContactContentProvider cp = this;
+		new CustomAction(app) {
+			
+			@Override
+			protected void initializeCodeFragments() {
+				addCodeFragment(new CodeFragment() {
+					
+					@Override
+					public String getActivityName() {
+						return "MainViewActivity";
+					}
+					
+					@Override
+					public void execute(MD2Application app) {
+						cp.open();
+					}
+				});
+			}
+		}.execute();
+	}
+	
+}

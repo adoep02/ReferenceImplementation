@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50d" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+	<entity name="DataTransferObject" representedClassName="DataTransferObject" isAbstract="YES" syncable="YES">
+		<attribute name="createdDate" optional="YES" attributeType="Date" defaultDateTimeInterval="362848762.79173" defaultValueString="now" syncable="YES"/>
+		<attribute name="identifier" optional="YES" attributeType="Integer 64" minValueString="0" maxValueString="99999" defaultValueString="0" syncable="YES"/>
+	</entity>
+	<entity name="GroupEntity" representedClassName="GroupEntity" parentEntity="DataTransferObject" syncable="YES">
+		<attribute name="name" optional="NO" attributeType="String" defaultValueString="" syncable="YES"/>
+	</entity>
+	<entity name="ContactEntity" representedClassName="ContactEntity" parentEntity="DataTransferObject" syncable="YES">
+		<attribute name="photo" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+		<attribute name="name" optional="NO" attributeType="String" defaultValueString="" syncable="YES"/>
+		<attribute name="firstname" optional="NO" attributeType="String" defaultValueString="" syncable="YES"/>
+		<attribute name="phone" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+		<attribute name="email" optional="YES" attributeType="String" defaultValueString="" syncable="YES"/>
+		<attribute name="street" optional="YES" attributeType="String" defaultValueString="" syncable="YES"/>
+		<attribute name="city" optional="YES" attributeType="String" defaultValueString="" syncable="YES"/>
+		<attribute name="zipCode" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+	</entity>
+</model>

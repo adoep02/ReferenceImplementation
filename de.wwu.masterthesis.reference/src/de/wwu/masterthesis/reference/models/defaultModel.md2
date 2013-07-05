@@ -1,0 +1,22 @@
+package de.wwu.masterthesis.reference.models
+
+/*
+ * Implement the model here
+ */
+
+entity Contact{
+	photo : integer (optional)
+	name : string
+	firstname : string
+	phone : integer (optional)
+	email : string (optional)
+	street : string (optional)
+ 	city: string (optional)
+ 	zipCode : integer (min 1000, max 99999, optional)
+	//groups : Group
+}
+
+entity Group{
+	name : string
+	//members : Contact[]
+}

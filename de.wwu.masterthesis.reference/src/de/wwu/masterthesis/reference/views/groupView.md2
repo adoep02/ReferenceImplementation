@@ -1,0 +1,13 @@
+package de.wwu.masterthesis.reference.views
+
+ FlowLayoutPane groupView (vertical) {
+ 	
+	AutoGenerator autoGenerator {
+		contentProvider groupContentProvider
+	}
+	
+	FlowLayoutPane persistence (horizontal){
+		Button saveButton ("Save")
+	}
+	
+ }

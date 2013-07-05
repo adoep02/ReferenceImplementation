@@ -1,0 +1,38 @@
+package de.wwu.masterthesis.reference.controllers
+
+/*
+ * Implement the controller here
+ */
+
+main{
+ 	appName "Contact Manager"	
+ 	appVersion "1.0"
+ 	modelVersion "1.0"
+ 	startView mainView.contactsTab
+ 	onInitialized startUpAction
+}
+ 
+ 
+ contentProvider Contact[] contactContentProvider {
+ 	providerType local
+ }
+ 
+ contentProvider Group[] groupContentProvider {
+ 	providerType local
+ }
+ 
+ action CustomAction startUpAction {
+ 	bind action retrieveGPSPositionAction on detailView.retrieveGPS.onTouch
+ 	bind action GotoViewAction (mainView.detailTab) on contacts.editContactButton.onTouch
+ 	bind action GotoViewAction (mainView.groupTab) on detailView.addGroupButton.onTouch
+  	bind action DataAction (save contactContentProvider) on mainView.detailTab -> detailView.persistence.saveButton.onTouch
+  	bind action DataAction (save groupContentProvider) on mainView.groupTab -> groupView.persistence.saveButton.onTouch
+  	bind action GotoViewAction (mainView.contactsTab) on detailView.persistence.saveButton.onTouch
+  	bind action GotoViewAction (mainView.detailTab) on groupView.persistence.saveButton.onTouch
+ }
+ 
+ action CustomAction retrieveGPSPositionAction{
+	call GPSUpdateAction (street to contactContentProvider.^street,
+						  city to contactContentProvider.^city,
+						  postalCode to contactContentProvider.zipCode)
+}

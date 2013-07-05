@@ -1,0 +1,19 @@
+package de.wwu.masterthesis.reference.views
+
+ FlowLayoutPane detailView (vertical) {
+ 	
+	AutoGenerator autoGenerator {
+		contentProvider contactContentProvider
+	}
+	
+	Button retrieveGPS ("Retrieve GPS position")
+	
+	Label groupLabel ("Group")
+	
+	Button addGroupButton ("Add Group")
+	
+	FlowLayoutPane persistence (horizontal){
+		Button saveButton ("Save")
+	}
+	
+ }

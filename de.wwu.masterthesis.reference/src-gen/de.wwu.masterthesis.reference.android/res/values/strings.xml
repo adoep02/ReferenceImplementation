@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Contact Manager</string>
+	<string name="label__anonymousName10_text">Photo</string>
+	<string name="label__anonymousName11_text">Name</string>
+	<string name="label__anonymousName12_text">Firstname</string>
+	<string name="label__anonymousName13_text">Phone</string>
+	<string name="label__anonymousName14_text">Email</string>
+	<string name="label__anonymousName15_text">Street</string>
+	<string name="label__anonymousName16_text">City</string>
+	<string name="label__anonymousName17_text">Zip Code</string>
+	<string name="retrieveGPS_text">Retrieve GPS position</string>
+	<string name="groupLabel_text">Group</string>
+	<string name="addGroupButton_text">Add Group</string>
+	<string name="saveButton1_text">Save</string>
+	<string name="editContactButton_text">Add a new contact</string>
+	<string name="label__anonymousName18_text">Name</string>
+	<string name="saveButton_text">Save</string>
+	<string name="tabtitle_contactstab">Contacts</string>
+	<string name="tabtitle_detailtab">Detail View</string>
+	<string name="tabtitle_grouptab">New Group</string>
+
+</resources>

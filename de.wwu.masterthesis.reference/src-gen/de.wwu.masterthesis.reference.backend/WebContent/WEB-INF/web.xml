@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>de.wwu.masterthesis.reference.backend</display-name>
+  <servlet>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>de.wwu.masterthesis.reference.backend.ws</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <url-pattern>/service/*</url-pattern>
+  </servlet-mapping>
+	<data-source>
+		<name>java:app/env/de.wwu.masterthesis.reference.backend</name>
+		<class-name>org.apache.derby.jdbc.ClientXADataSource</class-name>
+		<server-name>localhost</server-name>
+		<port-number>1527</port-number>
+		<database-name>de.wwu.masterthesis.reference.backend</database-name>
+		<user>APP</user>
+		<password>APP</password>
+		<property>
+			<name>connectionAttributes</name>
+			<value>;create=true</value>
+		</property>
+	</data-source>
+</web-app>

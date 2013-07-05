@@ -1,0 +1,16 @@
+package de.wwu.masterthesis.reference.views
+
+/*
+ * Implement the view here
+ */
+
+ FlowLayoutPane contacts(vertical) {
+ 	Button editContactButton("Add a new contact")
+ }
+ 
+ 
+ TabbedPane mainView{
+ 	contacts -> contactsTab (tabTitle "Contacts")
+ 	detailView -> detailTab (tabTitle "Detail View")
+ 	groupView -> groupTab (tabTitle "New Group")
+ } 

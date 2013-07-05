@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/groupTab"
+	style="@style/ContainerDefault"
+	android:orientation="vertical">
+	
+	<LinearLayout
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+	
+	<TextView
+		style="@style/ContentDefault"
+		android:text="Name" />
+	
+	<EditText
+		android:id="@+id/nameTextInput2"
+		style="@style/ContentDefault.EditTextDefault"
+		android:inputType="text" />
+		
+	
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		android:id="@+id/persistence2"
+		style="@style/ContainerDefault"
+		android:orientation="horizontal">
+		
+		<Button
+			android:id="@+id/saveButton2"
+			style="@style/ContentDefault"
+			android:text="Save" />
+		
+	</LinearLayout>
+	
+</LinearLayout>
