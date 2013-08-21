@@ -105,9 +105,11 @@ public class StartUpAction extends CustomAction {
 					
 					@Override
 					public void eventOccured() {
+						
 						//Added manually
 						GroupContentProvider groupContentProvider = (GroupContentProvider)app.findContentProviderByType(GroupContentProvider.class);
 						groupContentProvider.resetEntity();
+						//end
 						
 						if(app.getActiveActivity() instanceof TabbedActivity) {
 							((TabbedActivity)app.getActiveActivity()).setSelectedTab("groupTab");
@@ -269,8 +271,8 @@ public class StartUpAction extends CustomAction {
 					public void eventOccured() {
 						//Added manually
 						ContactContentProvider contactContentProvider = (ContactContentProvider)app.findContentProviderByType(ContactContentProvider.class);
-						//contactContentProvider.setEntity(new Contact());
 						contactContentProvider.resetEntity();
+						//end
 						
 						if(app.getActiveActivity() instanceof TabbedActivity) {
 							((TabbedActivity)app.getActiveActivity()).setSelectedTab("detailTab");
@@ -303,6 +305,11 @@ public class StartUpAction extends CustomAction {
 					
 					@Override
 					public void eventOccured() {
+						//Added manually
+						GroupContentProvider groupContentProvider = (GroupContentProvider)app.findContentProviderByType(GroupContentProvider.class);
+						groupContentProvider.resetEntity();
+						//end
+						
 						if(app.getActiveActivity() instanceof TabbedActivity) {
 							((TabbedActivity)app.getActiveActivity()).setSelectedTab("groupTab");
 						}

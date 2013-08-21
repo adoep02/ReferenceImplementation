@@ -6,6 +6,7 @@ import android.location.Location;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ListView;
 import de.wwu.md2.android.lib.MD2Application;
 import de.wwu.md2.android.lib.controller.actions.*;
 import de.wwu.md2.android.lib.controller.binding.CheckBoxMapping;
@@ -29,6 +30,7 @@ import de.wwu.md2.android.lib.controller.validators.IsIntValidator;
 import de.wwu.md2.android.lib.model.MD2Enum;
 import de.wwu.md2.android.lib.view.TabbedActivity;
 import de.wwu.masterthesis.reference.android.contentprovider.*;
+import de.wwu.masterthesis.reference.android.libextension.mapping.ListViewMapping;
 import de.wwu.masterthesis.reference.android.R;
 
 @SuppressWarnings("all")
@@ -277,6 +279,40 @@ public class AutoGenerationAction extends CustomAction {
 			}
 			
 		});
+		
+		//added manually
+		addCodeFragment(new CodeFragment() {
+			
+			@Override
+			public String getActivityName() {
+				return "DetailTab";
+			}
+			
+			@Override
+			public void execute(MD2Application app) {
+				app.getMappings().add(
+					new ListViewMapping<de.wwu.masterthesis.reference.android.models.Contact>(
+						(ListView) app.getActiveActivity().findViewById(R.id.grouplist),
+						app.findContentProviderByType(ContactContentProvider.class),
+						new PathResolver<de.wwu.masterthesis.reference.android.models.Contact, Integer>() {
+							public Integer retrieveValue(de.wwu.masterthesis.reference.android.models.Contact entity) {
+								return null;
+							}
+							
+							public void adaptValue(de.wwu.masterthesis.reference.android.models.Contact entity, Integer value) {
+								//ToDo
+							}
+						},
+						app.getEventBus(),
+						"groupList",
+						getActivityName()
+					)
+				);
+			}
+			
+		});
+		
+		//end
 		
 		addCodeFragment(new CodeFragment() {
 			

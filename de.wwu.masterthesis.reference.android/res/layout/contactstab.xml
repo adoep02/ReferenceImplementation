@@ -16,7 +16,7 @@
 	<ListView
 	    android:id="@+id/contactlist"
 	    android:layout_width="match_parent"
-	    android:layout_height="613dp"
+	    android:layout_height="517dp"
 	    android:background="#00FF00"
 	    android:drawSelectorOnTop="false" />
 	

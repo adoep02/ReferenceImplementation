@@ -31,6 +31,7 @@ public class Group implements Entity {
 	
 	public Group() {
 		applyDefaults();
+		contacts = new ArrayList<Contact>();
 	}
 	
 	private void applyDefaults() {
@@ -53,15 +54,6 @@ public class Group implements Entity {
 	
 	public void setName(String value) {
 		this.name = value;
-	}
-	
-	//Added manually
-	public ArrayList<Contact> getContacts() {
-		return contacts;
-	}
-
-	public void setContacts(ArrayList<Contact> contacts) {
-		this.contacts = contacts;
 	}
 	
 	public String toString(){

@@ -3,11 +3,13 @@ package de.wwu.masterthesis.reference.android.libextension.contentprovider;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
+import org.codehaus.jackson.type.JavaType;
 import org.codehaus.jackson.type.TypeReference;
 
 import android.app.Activity;
 import android.content.Context;
 
+import de.wwu.masterthesis.reference.android.models.Contact;
 import de.wwu.md2.android.lib.MD2Application;
 import de.wwu.md2.android.lib.controller.contentprovider.LocalContentProvider;
 import de.wwu.md2.android.lib.model.Entity;
@@ -21,6 +23,10 @@ public class LocalContentProviderMany<T extends Entity> extends LocalContentProv
 			String storageFilename) {
 		super(app, typeRef, entityType, isMany, storageFilename);
 		this.storageFilename = storageFilename;
+		
+		//manually: Create file if not exist
+		
+		//end manually
 	}
 	
 	private Activity getCtx() {
@@ -30,7 +36,7 @@ public class LocalContentProviderMany<T extends Entity> extends LocalContentProv
 	@Override
 	public void saveEntity() {
 		if(!contentArray.contains(entity)){
-			contentArray.add((T) entity);
+			contentArray.add((T)entity);
 		}
 		try {
 			FileOutputStream fos = getCtx().openFileOutput(storageFilename, Context.MODE_PRIVATE);
@@ -49,8 +55,8 @@ public class LocalContentProviderMany<T extends Entity> extends LocalContentProv
 	
 	public ArrayList<T> getContentList() {
 		try {
-			TypeReference ref = new TypeReference<ArrayList<T>>(){};
-			contentArray = om.readValue(getCtx().getFileStreamPath(storageFilename), ref);
+			JavaType type = om.getTypeFactory().constructCollectionType(ArrayList.class, entityType); //generate generic array list by Jackson!!!!
+			contentArray = om.readValue(getCtx().getFileStreamPath(storageFilename), type);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

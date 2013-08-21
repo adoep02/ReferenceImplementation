@@ -56,7 +56,6 @@ public class ContactsTabFragment extends Fragment {
 		
 		
 		//added manually
-		//get ArrayList of contacts
 		ContactContentProvider contentProvider = (ContactContentProvider)getApp().findContentProviderByType(ContactContentProvider.class);
 		ArrayList<Contact> contactList = contentProvider.getContentList();
 				
@@ -85,6 +84,7 @@ public class ContactsTabFragment extends Fragment {
 			}
 		 }
 		);
+		//end
 				
 		return view;
 	}
@@ -113,7 +113,6 @@ public class ContactsTabFragment extends Fragment {
 	@Override
     public void onResume() {
         super.onResume();
-        
 		getApp().setActiveActivity("ContactsTab", getActivity());
     }
 	

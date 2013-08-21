@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +39,6 @@ public class DetailTabFragment extends Fragment {
 	private View view;
 	private boolean isInitialized;
 	
-	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// If the view is already inflated, no initialization is required
@@ -54,20 +54,21 @@ public class DetailTabFragment extends Fragment {
 		//added manually
 		//get ArrayList of contacts
 		GroupContentProvider contentProvider = (GroupContentProvider)getApp().findContentProviderByType(GroupContentProvider.class);
-		ArrayList<Group> groupList = contentProvider.getGroups();
+		ArrayList<Group> groupList = contentProvider.getContentList();
 		
-		System.out.println("-----------" + groupList.size());
 				
 		ContactContentProvider contactContentProvider = (ContactContentProvider)getApp().findContentProviderByType(ContactContentProvider.class);
 									
 		//Create ListAdapter to present Items in Array
-		ListAdapter adapter = new CheckboxAdapter(getApp().getApplicationContext(), R.layout.checkboxlist, R.id.checkBox1, groupList, contactContentProvider.getEntity());
-					
+		ListAdapter adapter = new CheckboxAdapter(getApp().getApplicationContext(), R.layout.checkboxlist, R.id.checkBox1, groupList, contactContentProvider);
 		ListView lv = (ListView) view.findViewById(R.id.grouplist);
+		
 		lv.setAdapter(adapter);
+		//end manually
 				
 		return view;
 	}
+
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -104,6 +105,7 @@ public class DetailTabFragment extends Fragment {
 		// call of onResume.
 		if (!hidden) {
 			getApp().setActiveActivity("DetailTab", getActivity());
+			//lv.refreshDrawableState();
 		}
 	}
 	
