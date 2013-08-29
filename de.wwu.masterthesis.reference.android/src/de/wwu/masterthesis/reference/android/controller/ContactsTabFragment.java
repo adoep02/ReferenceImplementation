@@ -33,6 +33,7 @@ import de.wwu.md2.android.lib.view.TabbedActivity;
 import de.wwu.md2.android.lib.view.TimePickerFragment;
 import de.wwu.masterthesis.reference.android.R;
 import de.wwu.masterthesis.reference.android.contentprovider.ContactContentProvider;
+import de.wwu.masterthesis.reference.android.libextension.touchevent.MD2ItemTouchEvent;
 import de.wwu.masterthesis.reference.android.models.Contact;
 
 @SuppressWarnings("unused")
@@ -56,34 +57,34 @@ public class ContactsTabFragment extends Fragment {
 		
 		
 		//added manually
-		ContactContentProvider contentProvider = (ContactContentProvider)getApp().findContentProviderByType(ContactContentProvider.class);
-		ArrayList<Contact> contactList = contentProvider.getContentList();
-				
-				
-		//Create ListAdapter to present Items in Array
-		ListAdapter adapter = new ArrayAdapter<Contact>(getApp().getApplicationContext(), android.R.layout.simple_list_item_1, contactList);
-		
-		final ListView lv = (ListView) view.findViewById(R.id.contactlist);
-		lv.setAdapter(adapter);
-						
-		//OnClickEvent
-		lv.setOnItemClickListener(new OnItemClickListener(){
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-				ContactContentProvider contentProvider = (ContactContentProvider)getApp().findContentProviderByType(ContactContentProvider.class);
-				contentProvider.setEntity((Contact)lv.getAdapter().getItem(arg2));
-				if(getApp().getActiveActivity() instanceof TabbedActivity) {
-					((TabbedActivity)getApp().getActiveActivity()).setSelectedTab("detailTab");
-				}
-				else {
-					Intent intent = new Intent(getApp().getActiveActivity(), de.wwu.masterthesis.reference.android.controller.MainViewActivity.class);
-					intent.putExtra("tabToShow", "detailTab");
-					getApp().getActiveActivity().startActivity(intent);
-				}	
-			}
-		 }
-		);
+//		ContactContentProvider contentProvider = (ContactContentProvider)getApp().findContentProviderByType(ContactContentProvider.class);
+//		ArrayList<Contact> contactList = contentProvider.getContentList();
+//				
+//				
+//		//Create ListAdapter to present Items in Array
+//		ListAdapter adapter = new ArrayAdapter<Contact>(getApp().getApplicationContext(), android.R.layout.simple_list_item_1, contactList);
+//		
+//		final ListView lv = (ListView) view.findViewById(R.id.contactlist);
+//		lv.setAdapter(adapter);
+//						
+//		//OnClickEvent
+//		lv.setOnItemClickListener(new OnItemClickListener(){
+//			@Override
+//			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+//					long arg3) {
+//				ContactContentProvider contentProvider = (ContactContentProvider)getApp().findContentProviderByType(ContactContentProvider.class);
+//				contentProvider.setEntity((Contact)lv.getAdapter().getItem(arg2));
+//				if(getApp().getActiveActivity() instanceof TabbedActivity) {
+//					((TabbedActivity)getApp().getActiveActivity()).setSelectedTab("detailTab");
+//				}
+//				else {
+//					Intent intent = new Intent(getApp().getActiveActivity(), de.wwu.masterthesis.reference.android.controller.MainViewActivity.class);
+//					intent.putExtra("tabToShow", "detailTab");
+//					getApp().getActiveActivity().startActivity(intent);
+//				}	
+//			}
+//		 }
+//		);
 		//end
 				
 		return view;
@@ -134,6 +135,7 @@ public class ContactsTabFragment extends Fragment {
 	
 	private void initializeEvents() {
 		getView().findViewById(R.id.editContactButton).setOnClickListener(new MD2TouchEvent(getApp().getEventBus(), "editContactButton_Touched"));
+		((ListView)getView().findViewById(R.id.contactlist)).setOnItemClickListener(new MD2ItemTouchEvent(getApp().getEventBus(), "contactlist_Touched"));
 	}
 	
 	private void initializeEntitySelectors() {

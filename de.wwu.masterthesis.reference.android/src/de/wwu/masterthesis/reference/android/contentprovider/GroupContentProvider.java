@@ -59,42 +59,4 @@ public class GroupContentProvider extends LocalContentProviderMany<Group> {
 					}
 				}.execute();
 	}
-
-	/*
-	private Activity getCtx() {
-		return app.getActiveActivity();
-	}
-	
-	@Override
-	public void saveEntity() {
-		if(!groups.contains(entity)){
-			groups.add((Group) entity);
-		}
-		try {
-			FileOutputStream fos = app.getActiveActivity().openFileOutput("groupContentProvider.json", Context.MODE_WORLD_READABLE);
-			try {
-				om.writeValue(fos, groups);		
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			fos.close();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	public ArrayList<Group> getGroups() {
-		try {
-			TypeReference ref = new TypeReference<ArrayList<Group>>(){};
-			groups = om.readValue(getCtx().getFileStreamPath(storageFilename), ref);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-			
-		return groups;
-	}*/
-	
 }

@@ -388,6 +388,38 @@ public class StartUpAction extends CustomAction {
 			
 		});
 		
+		addCodeFragment(new CodeFragment() {
+			
+			@Override
+			public String getActivityName() {
+				return null;
+			}
+			
+			@Override
+			public void execute(final MD2Application app) {
+				
+				
+				app.getEventBus().subscribe("contactlist_Touched", "contactlist_Touched_GotoViewAction_detailTab", new MD2EventHandler() {
+					
+					@Override
+					public void eventOccured() {
+						if(app.getActiveActivity() instanceof TabbedActivity) {
+							((TabbedActivity)app.getActiveActivity()).setSelectedTab("detailTab");
+						}
+						else {
+							Intent intent = new Intent(app.getActiveActivity(), de.wwu.masterthesis.reference.android.controller.MainViewActivity.class);
+							intent.putExtra("tabToShow", "detailTab");
+							app.getActiveActivity().startActivity(intent);
+						}
+					}
+				}
+				);
+		
+			}
+			
+		});
+		
 	}
+		
 }
 

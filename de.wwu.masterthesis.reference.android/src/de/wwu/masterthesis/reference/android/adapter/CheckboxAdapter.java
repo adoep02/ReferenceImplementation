@@ -26,7 +26,6 @@ public class CheckboxAdapter extends ArrayAdapter<Group>{
 	private ContactContentProvider contactContentProvider;
 	private Context context;
 	private ViewHolder holder; 
-	private Group group;
 
 
 	public CheckboxAdapter(Context context, int resource, int textViewResourceId, ArrayList<Group> groupList, ContactContentProvider contactContentProvider) {
@@ -35,7 +34,6 @@ public class CheckboxAdapter extends ArrayAdapter<Group>{
 		this.contactContentProvider = contactContentProvider;
 		this.context = context;
 		this.holder = null;
-		this.group = null;
 	}
 	
 	private class ViewHolder {
@@ -47,7 +45,7 @@ public class CheckboxAdapter extends ArrayAdapter<Group>{
 		
 	   Log.v("ConvertView", String.valueOf(position));
 	  
-	 
+	   final Group group = groupList.get(position);
 	   if (convertView == null) {
 		   LayoutInflater vi = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		   convertView = vi.inflate(R.layout.checkboxlist, null);
@@ -57,16 +55,9 @@ public class CheckboxAdapter extends ArrayAdapter<Group>{
 		   //cache the view
 		   holder.checkbox = (CheckBox) convertView.findViewById(R.id.checkBox1);
 		   
-		   group = groupList.get(position);
 		   holder.checkbox.setText(group.getName());
 		   holder.checkbox.setTag(group);
 		   
-//		   for(Iterator<Group> i = contactContentProvider.getEntity().getGroups().iterator(); i.hasNext(); ){
-//			   if(i.next().getName().equalsIgnoreCase(group.getName()))
-//				   holder.checkbox.setChecked(true);
-////			   else
-////				   holder.checkbox.setChecked(false);
-//		   }
 			if(contactContentProvider.getEntity().getGroups().contains(group)){
 				holder.checkbox.setChecked(true);
 			}
@@ -109,26 +100,4 @@ public class CheckboxAdapter extends ArrayAdapter<Group>{
 	   return convertView;
 	  }
 
-//	@Override
-//	public void onClick(View v) {
-//	CheckBox cb = (CheckBox) v ; 
-////       if(cb.isChecked()){
-////    	   contactContentProvider.getEntity().getGroups().add(groupList.get(currentPosition));
-////       }
-////       else{
-////    	   contactContentProvider.getEntity().getGroups().remove(groupList.get(currentPosition));
-////       }
-//       
-//		if(!contactContentProvider.getEntity().getGroups().contains(group)){
-//		    contactContentProvider.getEntity().getGroups().add(group);
-//		    //cb.setChecked(true);
-//		}
-//		else{
-//		    contactContentProvider.getEntity().getGroups().remove(group);
-//		    //cb.setChecked(false);
-//		}
-//       
-//       this.notifyDataSetChanged();
-//       v.refreshDrawableState();
-//   }
 }

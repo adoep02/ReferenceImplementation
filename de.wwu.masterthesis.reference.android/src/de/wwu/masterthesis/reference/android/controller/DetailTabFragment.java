@@ -105,7 +105,6 @@ public class DetailTabFragment extends Fragment {
 		// call of onResume.
 		if (!hidden) {
 			getApp().setActiveActivity("DetailTab", getActivity());
-			//lv.refreshDrawableState();
 		}
 	}
 	
